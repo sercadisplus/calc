@@ -160,7 +160,7 @@
             position: relative;
             font-size: 16px;
             float: right;
-            top: 23.5px;
+            top: 24px;
             right: -208px;
             line-height: 19px;
             font-weight: 600;
@@ -361,7 +361,9 @@
 
         function getLWA(rowWidth, plantHigh, stemHigh) {
             var crown = plantHigh - stemHigh;
-            return 10000 * 2 * crown / rowWidth;
+            var lva = 10000 * 2 * crown / rowWidth;
+
+            return parseFloat(lva).toFixed(2);
         }
 
         function getSerkadis(lva, rowWidth, plantHigh, stemHigh, phase, weather) {
