@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <title>BASF</title>
+    <style>
+        @font-face {
+            font-family: 'fontello';
+            src: url('fontello.eot?43701196');
+            src: url('fontello.eot?43701196#iefix') format('embedded-opentype'),
+            url('fontello.woff?43701196') format('woff'),
+            url('fontello.ttf?43701196') format('truetype'),
+            url('fontello.svg?43701196#fontello') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]) {
+            -webkit-appearance: none;
+        }
+
+        /*light*/
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("HelveticaLight.ttf") format("TrueType");
+            font-weight: 100;
+        }
+
+        /*roman*/
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("HelveticaRegular.ttf") format("TrueType");
+            font-weight: 400;
+        }
+
+        /*medium*/
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("HelveticaMedium.ttf") format("TrueType");
+            font-weight: 600;
+        }
+
+        /*bold*/
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url("HelveticaBold.ttf") format("TrueType");
+            font-weight: 900;
+        }
+
+        * {
+            font-family: "fontello", HelveticaNeue, sans-serif;
+        }
+
+        .serkadis-form {
+            padding: 66px;
+            background-color: #FCFCFC;
+            color: #212529;
+            max-width: 770px;
+            min-width: 280px;
+        }
+
+        .serkadis-form h1 {
+            font-weight: 100;
+            font-size: 48px;
+            line-height: 50px;
+        }
+
+        h2.params {
+            font-weight: 100;
+            width: 322px;
+            height: 24px;
+            font-size: 22px;
+            line-height: 23px;
+        }
+
+        label {
+            float: left;
+            font-weight: 900;
+            width: 130px;
+            height: 25px;
+            font-size: 14px;
+            margin-top: 28px;
+            margin-left: 7px;
+        }
+
+        .form-row {
+            min-height: 66px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .form-row:last-child {
+            border-bottom: none !important;
+        }
+
+        .form-row input, .form-row select {
+            outline: none;
+            float: right;
+            width: 270px;
+            height: 36px;
+            background: #FFFFFF;
+            border: 1px solid #F0F0F0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin: 15px 7px;
+            align-items: center;
+            text-align: right;
+            color: #212529;
+            padding: 8px;
+        }
+
+        .form-row select {
+            font-weight: 100; /*light*/
+            font-size: 14px;
+            line-height: 15px;
+            padding-left: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url("Shape.svg") 92% / 4.5% no-repeat #fff;;
+        }
+
+        .form-row input {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 600; /*medium*/
+            width: 210px;
+            padding-right: 21px;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .form-row input:focus {
+            border: 1px solid #65AC1E;
+        }
+
+        input::placeholder {
+            font-weight: 900;
+            color: #3E3E3E;
+            opacity: 0.4;
+        }
+
+        div.input-wrap::after {
+            content: "м";
+            position: relative;
+            font-size: 16px;
+            float: right;
+            top: 23.5px;
+            right: -208px;
+            line-height: 19px;
+            font-weight: 600;
+        }
+
+        input[type=submit] {
+            width: 153px;
+            height: 40px;
+            left: 662px;
+            top: 627px;
+            background: #65AC1E;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            float: right;
+            font-size: 16px;
+            line-height: 16px;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 0;
+        }
+
+        input[type=submit]:hover {
+            background: #6fba1f;
+            color: #dbffc5;
+        }
+
+        .serkadis-results {
+            clear: both;
+        }
+
+        .serkadis-results .results-container {
+            background: #F0F0F0;
+            padding: 20px;
+        }
+
+        h5 {
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 900;
+        }
+
+        .results-name {
+            font-weight: 900;
+            font-size: 14px;
+            line-height: 17px;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .results-value {
+            float: right;
+            font-size: 20px;
+            line-height: 24px;
+            align-items: center;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .results-row {
+            padding: 19px 0;
+        }
+
+        .results-row:first-child {
+            border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+        }
+
+        #normSerkadisPlusResult {
+            color: #65AC1E;
+        }
+
+        #normSerkadisPlusResult[data-wrong-result=true] {
+            color: #DC3545;
+        }
+
+        #notification {
+            font-size: 14px;
+            line-height: 120%;
+            color: #DC3545;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<form id="basf-calc" class="serkadis-form" action="#">
+    <h1>Розрахунок норми використання</h1>
+
+    <h2 class="params">Введіть параметри Вашого саду</h2>
+    <div>
+        <div class="form-row">
+            <label for="row-width">Ширина міжряддя</label>
+            <div class="input-wrap">
+                <input id="row-width" type="number" placeholder="0" step="0.1" min="0.1" required>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-row">
+            <label for="plant-high">Висота рослини</label>
+            <div class="input-wrap-wrap">
+                <div class="input-wrap">
+                    <input id="plant-high" type="number" placeholder="0" step="0.1" min="0.1" required>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-row">
+            <label for="stem-high">Висота стовбура</label>
+            <div class="input-wrap">
+                <input id="stem-high" type="number" placeholder="0" step="0.1" min="0.1" required>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-row">
+            <label for="phase">Фаза росту</label>
+            <select id="phase">
+                <option value="0.9">Формування суцвіть</option>
+                <option value="0.9">Рожевий бутон</option>
+                <option value="1">Цвітіння</option>
+                <option value="1">Кінець цвітіння</option>
+                <option value="1">Ліщина</option>
+                <option value="1.1">Волоський горіх</option>
+                <option value="1.1">Формування і дозрівання плодів</option>
+            </select>
+            <div class="clear"></div>
+        </div>
+        <div class="form-row">
+            <label for="weather">Погодні умови</label>
+            <select id="weather">
+                <option value="1">&#xe801;&#160;&#160;&#160;Звичайні</option>
+                <option value="1.1">&#xe802;&#160;&#160;&#160;Складні</option>
+            </select>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <input type="submit" value="Розрахувати"/>
+    <div class="clear"></div>
+    <div class="serkadis-results">
+        <h5>Результат</h5>
+        <div class="results-container">
+            <div class="results-row">
+                <span class="results-name">Площа листової поверхні (LWA)</span>
+                <span class="results-value">
+                    <span id="LWA"></span>
+                    <span>м&#178;</span>
+                </span>
+                <div class="clear"></div>
+            </div>
+            <div class="results-row">
+                <span class="results-name">Норма Серкадіс Плюс</span>
+                <span id="normSerkadisPlusResult" class="results-value">
+                    <span id="normSerkadisPlus"></span>
+                    <span>л/га</span>
+                </span>
+                <div class="clear"></div>
+                <span id="notification"></span>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calcform = document.getElementById('basf-calc');
+        calcform.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            document.getElementById('normSerkadisPlusResult').setAttribute('data-wrong-result', false);
+            document.getElementById('notification').innerText = '';
+
+            var rowWidth = document.getElementById('row-width').value;
+            var plantHigh = document.getElementById('plant-high').value;
+            var stemHigh = document.getElementById('stem-high').value;
+            var phase = document.getElementById('phase').value;
+            var weather = document.getElementById('weather').value;
+
+            var lva = getLWA(rowWidth, plantHigh, stemHigh);
+            var normSerkadisPlus = getSerkadis(lva, rowWidth, plantHigh, stemHigh, phase, weather);
+
+            if (lva >= 0) {
+                document.getElementById('LWA').innerText = lva;
+                document.getElementById('normSerkadisPlus').innerText = normSerkadisPlus >= 0 ? normSerkadisPlus : '';
+
+                if (normSerkadisPlus < 0.9) {
+                    document.getElementById('notification').innerText = 'Норма внесення менша від зареєстрованої: рекомендовано 0.9 л/га';
+                    document.getElementById('normSerkadisPlusResult').setAttribute('data-wrong-result', true);
+                } else if (normSerkadisPlus > 1.5) {
+                    document.getElementById('normSerkadisPlusResult').setAttribute('data-wrong-result', true);
+                    document.getElementById('notification').innerText = 'Норма внесення перевищує зареєстровану: рекомендовано 1,5 л/га';
+                }
+            }
+        });
+
+        function getLWA(rowWidth, plantHigh, stemHigh) {
+            var crown = plantHigh - stemHigh;
+            return 10000 * 2 * crown / rowWidth;
+        }
+
+        function getSerkadis(lva, rowWidth, plantHigh, stemHigh, phase, weather) {
+            var baseNorm = 0.7;
+            var lvaUpdated = lva * phase;
+            var lvaFactor = lvaUpdated / 10000;
+            var normSarcadisPlus = baseNorm * lvaFactor * weather;
+            normSarcadisPlus = parseFloat(normSarcadisPlus).toFixed(2);
+
+            return normSarcadisPlus;
+        }
+    });
+</script>
+</body>
+</html>
