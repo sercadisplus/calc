@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,7 +284,8 @@
         <div class="form-row">
             <label for="row-width">Ширина міжряддя</label>
             <div class="input-wrap">
-                <input id="row-width" type="number" placeholder="0" step="0.1" min="0.1" required>
+                <input id="row-width" type="text" pattern="[0-9,.]*" placeholder="0" step="any" min="0.1" required
+                       lang="en-US">
             </div>
             <div class="clear"></div>
         </div>
@@ -292,7 +293,7 @@
             <label for="plant-high">Висота рослини</label>
             <div class="input-wrap-wrap">
                 <div class="input-wrap">
-                    <input id="plant-high" type="number" placeholder="0" step="0.1" min="0.1" required>
+                    <input id="plant-high" type="text" pattern="[0-9,.]*" placeholder="0" step="any" min="0.1" required>
                 </div>
             </div>
             <div class="clear"></div>
@@ -300,7 +301,7 @@
         <div class="form-row">
             <label for="stem-high">Висота стовбура</label>
             <div class="input-wrap">
-                <input id="stem-high" type="number" placeholder="0" step="0.1" min="0.1" required>
+                <input id="stem-high" type="text" pattern="[0-9,.]*" placeholder="0" step="any" min="0.1" required>
             </div>
             <div class="clear"></div>
         </div>
@@ -352,6 +353,23 @@
         </div>
     </div>
 </form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var inputs = document.querySelectorAll('input');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('input', updateValue);
+        }
+
+        function updateValue(e) {
+            var val = e.target.value;
+            var t = val.replace(',', '.');
+            var res = parseFloat(t);
+            if (!isNaN(t)) {
+                e.target.value = t;
+            }
+        }
+    });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var calcform = document.getElementById('basf-calc');
